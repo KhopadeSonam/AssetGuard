@@ -1,7 +1,10 @@
 import axios from "axios";
 
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000/api/";
+const normalizedBaseUrl = API_BASE_URL.endsWith('/') ? API_BASE_URL : `${API_BASE_URL}/`;
+
 const api = axios.create({
-    baseURL: "http://127.0.0.1:8000/api/",
+    baseURL: normalizedBaseUrl,
 });
 
 api.interceptors.request.use(
@@ -37,7 +40,7 @@ api.interceptors.response.use(
             if (refreshToken) {
                 try {
                     const response = await axios.post(
-                        "http://127.0.0.1:8000/api/auth/refresh/",
+                        `${normalizedBaseUrl}auth/refresh/`,
                         { refresh: refreshToken }
                     );
 
@@ -68,4 +71,4 @@ api.interceptors.response.use(
     }
 );
 
-export default api;
+export default api;
