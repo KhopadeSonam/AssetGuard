@@ -1,0 +1,258 @@
+[
+{
+  "model": "assetguard.base",
+  "pk": 1,
+  "fields": {
+    "name": "Base Alpha",
+    "location": "Pune"
+  }
+},
+{
+  "model": "assetguard.base",
+  "pk": 2,
+  "fields": {
+    "name": "Base Bravo",
+    "location": "Mumbai"
+  }
+},
+{
+  "model": "assetguard.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$BkrP2xCHvq7LmTUMjc4T3c$r7MTvhNpoSgOalEnCEM4tWxbYVozbMvHV7uMzg+oHJY=",
+    "last_login": "2026-09-30T17:21:34.171Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "sonam2khopade@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-09-30T16:40:21.247Z",
+    "role": "ADMIN",
+    "base": null,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "assetguard.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$pxaqf7UmgaXaRdHPgD3SHD$fBLtLMDBaQd7FMw2jAm3e36WEBtnoxOrrsqYwqSUfDw=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "commander_alpha",
+    "first_name": "",
+    "last_name": "",
+    "email": "alpha@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-09-30T20:33:05.646Z",
+    "role": "BASE_COMMANDER",
+    "base": 2,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "assetguard.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1500000$wldVSOzIQsJjIon79xdkeY$YdEok10TJwUjT+myJIJdxMWKNONpcBU7tYYd+VB9CjE=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "logistics_alpha",
+    "first_name": "",
+    "last_name": "",
+    "email": "logisticalpha@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-09-30T20:34:00.273Z",
+    "role": "LOGISTICS_OFFICER",
+    "base": 1,
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "assetguard.equipmenttype",
+  "pk": 1,
+  "fields": {
+    "name": "Military Truck",
+    "category": "VEHICLE"
+  }
+},
+{
+  "model": "assetguard.equipmenttype",
+  "pk": 2,
+  "fields": {
+    "name": "Rifle",
+    "category": "WEAPON"
+  }
+},
+{
+  "model": "assetguard.equipmenttype",
+  "pk": 3,
+  "fields": {
+    "name": "5.56mm Ammunition",
+    "category": "AMMUNITION"
+  }
+},
+{
+  "model": "assetguard.inventory",
+  "pk": 1,
+  "fields": {
+    "base": 1,
+    "equipment_type": 2,
+    "quantity": 65,
+    "updated_at": "2026-09-30T19:05:56.851Z"
+  }
+},
+{
+  "model": "assetguard.inventory",
+  "pk": 2,
+  "fields": {
+    "base": 1,
+    "equipment_type": 1,
+    "quantity": 70,
+    "updated_at": "2026-09-30T17:57:19.785Z"
+  }
+},
+{
+  "model": "assetguard.inventory",
+  "pk": 3,
+  "fields": {
+    "base": 1,
+    "equipment_type": 3,
+    "quantity": 4900,
+    "updated_at": "2026-09-30T19:06:39.226Z"
+  }
+},
+{
+  "model": "assetguard.inventory",
+  "pk": 4,
+  "fields": {
+    "base": 2,
+    "equipment_type": 2,
+    "quantity": 97,
+    "updated_at": "2026-09-30T20:43:18.133Z"
+  }
+},
+{
+  "model": "assetguard.purchase",
+  "pk": 1,
+  "fields": {
+    "base": 1,
+    "equipment_type": 1,
+    "quantity": 50,
+    "purchase_date": "2026-09-30",
+    "created_by": [
+      "admin"
+    ],
+    "created_at": "2026-09-30T17:57:19.778Z"
+  }
+},
+{
+  "model": "assetguard.transfer",
+  "pk": 1,
+  "fields": {
+    "from_base": 1,
+    "to_base": 2,
+    "equipment_type": 2,
+    "quantity": 30,
+    "transfer_date": "2026-09-30",
+    "created_by": [
+      "admin"
+    ],
+    "created_at": "2026-09-30T18:54:02.110Z"
+  }
+},
+{
+  "model": "assetguard.assignment",
+  "pk": 1,
+  "fields": {
+    "base": 1,
+    "equipment_type": 2,
+    "personnel_name": "Officer A",
+    "quantity": 5,
+    "assignment_date": "2026-09-30",
+    "created_by": [
+      "admin"
+    ],
+    "created_at": "2026-09-30T19:05:56.856Z"
+  }
+},
+{
+  "model": "assetguard.assignment",
+  "pk": 2,
+  "fields": {
+    "base": 2,
+    "equipment_type": 2,
+    "personnel_name": "fgf",
+    "quantity": 5,
+    "assignment_date": "2026-10-01",
+    "created_by": [
+      "commander_alpha"
+    ],
+    "created_at": "2026-09-30T20:42:37.477Z"
+  }
+},
+{
+  "model": "assetguard.expenditure",
+  "pk": 1,
+  "fields": {
+    "base": 1,
+    "equipment_type": 3,
+    "quantity": 100,
+    "reason": "Training exercise",
+    "expenditure_date": "2026-09-30",
+    "created_by": [
+      "admin"
+    ],
+    "created_at": "2026-09-30T19:06:39.229Z"
+  }
+},
+{
+  "model": "assetguard.expenditure",
+  "pk": 2,
+  "fields": {
+    "base": 2,
+    "equipment_type": 2,
+    "quantity": 3,
+    "reason": "ghgh",
+    "expenditure_date": "2026-11-07",
+    "created_by": [
+      "commander_alpha"
+    ],
+    "created_at": "2026-09-30T20:43:18.137Z"
+  }
+},
+{
+  "model": "assetguard.auditlog",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "commander_alpha"
+    ],
+    "action": "ASSIGNMENT",
+    "base": 2,
+    "equipment_type": 2,
+    "quantity": 5,
+    "details": "Assigned 5 Rifle to fgf at Base Bravo.",
+    "timestamp": "2026-09-30T20:42:37.480Z"
+  }
+},
+{
+  "model": "assetguard.auditlog",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "commander_alpha"
+    ],
+    "action": "EXPENDITURE",
+    "base": 2,
+    "equipment_type": 2,
+    "quantity": 3,
+    "details": "Expended 3 Rifle at Base Bravo. Reason: ghgh",
+    "timestamp": "2026-09-30T20:43:18.140Z"
+  }
+}
+]
